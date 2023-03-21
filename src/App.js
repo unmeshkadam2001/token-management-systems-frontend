@@ -4,9 +4,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddServices from './component/AddServices';
 import AssignCounter from './component/AssignCounter';
 import ManagerHomePage from './component/ManagerHomePage';
+import Login from './component/Login';
+import HomePage from './component/HomePage';
+// import Login from './component/Login';
 
 const router = createBrowserRouter([
-  {path:'/',element: ''},
+  {path:'/',element: <HomePage/>},
+  {path:'/ManagerHomePage', element: <ManagerHomePage/>},
   {path:'/addServices',element:<AddServices />},
   {path:'/assignCounter',element:<AssignCounter />},
   
@@ -15,7 +19,7 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div style={{ paddingBottom:"10px" }}>
-      <ManagerHomePage />
+      {/* <ManagerHomePage /> */}
       <RouterProvider router={router} />
     </div>
   );
