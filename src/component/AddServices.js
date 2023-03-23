@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './AddServices.css'
+import "./AddServices.css";
 
 function AddServices() {
   const [typeOfService, setTypeOfService] = useState("");
   const [services, setServices] = useState([{ serviceName: "", statusOfService: "activate" }]);
   const [validationErrors, setValidationErrors] = useState([]);
+  const [message, setMessage] = useState("");
 
   const handleServiceChange = (index, event) => {
     const updatedServices = [...services];
@@ -44,7 +45,13 @@ function AddServices() {
       return;
     }
     setValidationErrors([]);
-    await axios.post("http://localhost:8080/addService", data);
+    await axios.post("http://localhost:8080/addService", data).then(response => {
+      setMessage("Servies added successfully!");
+    })
+    .catch(error => {
+      console.log(error);
+      setMessage("Inserting services failed!");
+    });
   };
 
   return (
@@ -91,6 +98,8 @@ function AddServices() {
         
         <button type="submit">Submit</button>
         </form>
+        <br></br>
+        {message && <p style={{backgroundColor:"white" , padding:"10px" , color:"green" , textAlign:"center" }}>{message}</p>}
     </div>
   );
 }

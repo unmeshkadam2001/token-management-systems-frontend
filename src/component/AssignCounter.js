@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import './AssignCounter.css';
 
 function AssignCounter() {
   const [serviceTypes, setServiceTypes] = useState([]);
   const [counterExecutiveName, setCounterExecutiveName] = useState("");
   const [password, setPassword] = useState("");
   const [serviceTypeId, setServiceTypeId] = useState("");
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     axios.get('http://localhost:8080/getServicesTypes')
       .then(response => {
+        console.log(response.data);
         setServiceTypes(response.data);
+        
       })
       .catch(error => {
         console.log(error);
@@ -34,10 +36,11 @@ function AssignCounter() {
     };
     axios.post('http://localhost:8080/assignCounter', data)
       .then(response => {
-        console.log(response.data);
+        setMessage("Counter assigned successfully.");
       })
       .catch(error => {
         console.log(error);
+        setMessage("Counter assignment failed.");
       });
   };
 
@@ -65,7 +68,9 @@ function AssignCounter() {
           </select>
         </div>
         <button type="submit" className="btn btn-primary">Assign Counter</button>
-      </form>
+      </form><br></br>
+      {message && <p style={{backgroundColor:"white" , padding:"10px" , color:"green" , textAlign:"center" }}>{message}</p>}
+      
     </div>
   );
 }

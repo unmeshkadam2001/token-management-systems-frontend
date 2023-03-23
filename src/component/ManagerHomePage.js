@@ -7,7 +7,7 @@ function ManagerHomePage() {
   return (
     <div  class="row justify-content-center p-4">
       <h1 class="text-center" style={{ padding:"10px" }} >Welcome to xyz</h1>
-      <div class="col-sm-4 rounded">
+      <div class="col-sm-4 rounded" style={{ marginTop:"20px" }}>
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-primary">Add Services</h5><br></br>
@@ -17,11 +17,21 @@ function ManagerHomePage() {
           </div>
         </div>
       </div>
-      <div class="col-sm-4 rounded">
+      <div class="col-sm-4 rounded" style={{ marginTop:"20px" }}>
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-primary">Assign the counter</h5><br></br>
             <a href="/assignCounter" class="btn btn-primary">
+              Click Here
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4 rounded" style={{ marginTop:"20px" }}>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title text-primary">Token Generation</h5><br></br>
+            <a href="/tokenGeneration" class="btn btn-primary">
               Click Here
             </a>
           </div>
