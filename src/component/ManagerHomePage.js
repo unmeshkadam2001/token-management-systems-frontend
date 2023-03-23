@@ -27,16 +27,7 @@ function ManagerHomePage() {
           </div>
         </div>
       </div>
-      <div class="col-sm-4 rounded" style={{ marginTop:"20px" }}>
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title text-primary">Token Generation</h5><br></br>
-            <a href="/tokenGeneration" class="btn btn-primary">
-              Click Here
-            </a>
-          </div>
-        </div>
-      </div>
+     
     </div>
   );
 }

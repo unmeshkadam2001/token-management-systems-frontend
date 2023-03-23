@@ -12,7 +12,7 @@ export default function HomePage() {
                 </a>
                 <a href='/MLogin' className='nav-link'>Manager Login</a>
                 <a onClick={()=>navigate("/CELogin")} className='nav-link'>Counter Executive Login</a>
-                <a href='/' className='nav-link link-light'>About Us</a>
+                <a href='/tokenGeneration' className='nav-link link-light'>Token Generation</a>
             </nav>
             
 

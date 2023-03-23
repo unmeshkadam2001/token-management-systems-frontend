@@ -4,8 +4,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddServices from './component/AddServices';
 import AssignCounter from './component/AssignCounter';
 import ManagerHomePage from './component/ManagerHomePage';
-import Login from './component/Login';
+import CELogin from './component/CELogin';
 import HomePage from './component/HomePage';
+import TokenGeneration from './component/TokenGeneration';
 import MLogin from './component/MLogin';
 import CounterExecutive from './component/CounterExecutive';
 import ExecutiveState from './context/CounterExecutive/ExecutiveState';
@@ -18,9 +19,8 @@ const router = createBrowserRouter([
   { path: '/assignCounter', element: <AssignCounter /> },
   { path: '/CELogin', element: <CELogin /> },
   { path: '/MLogin', element: <MLogin /> },
-  { path: '/CounterExecutive', element: <CounterExecutive /> }
- 
-  
+  { path: '/tokenGeneration', element: <TokenGeneration /> },
+  { path: '/CounterExecutive', element: <CounterExecutive /> }  
 ])
 
 function App() {

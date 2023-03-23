@@ -7,6 +7,7 @@ export default function CELogin() {
     const navigate = useNavigate();
     const[username, setUsername] = useState();
     const[password, setPassword] = useState();
+    
 
     function userInput(e){
         setUsername(e.target.value);
@@ -30,6 +31,7 @@ export default function CELogin() {
         console.log(response.data.status);
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
+        localStorage.setItem("id", response.data.id);
         if(response.data.status === true){
             navigate("/CounterExecutive");
         }
@@ -50,7 +52,7 @@ export default function CELogin() {
                 <h5>Counter Executive</h5>
                 <div className="form-outline mb-4">
                     <input type="text" placeholder='Enter Username...' id="form2Example1" onChange={userInput} className="form-control" />
-                    {username}
+                    
                 </div>
 
                 
