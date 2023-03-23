@@ -1,9 +1,8 @@
-*{
-  background-image: url('./image/download.png');
 
-  
-  background-repeat: no-repeat;
-  background-size: auto;
-
+html{
+  background: url(434.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
-

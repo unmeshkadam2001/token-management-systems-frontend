@@ -1,0 +1,39 @@
+How to use useContext?
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Setup Part
+===================================
+1] Make these folders
+    1.Context/classnameContext
+2] Make two separate files under this folders
+    1. classNameContext.js - Creating Context
+    2. classNameState.js - pass props inside functional component
+                         - return (
+                            <classNameContext.Provider value={}>
+                                    {props.children}
+                            </classNameContext.Provider>                         )
+                         - Writing useState here
+                         - Import classNameContext file here
+Usage Part
+===================================
+    1. Embedded all tags of App.js inside the "classNameState" tag
+            function App() {
+                return (
+                    <div style={{ paddingBottom: "10px" }}>
+                    <ExecutiveState>
+                        <CounterExecutive />
+                    </ExecutiveState>
+                    </div>
+                );
+            }
+    2. In whichever class you want to use this 
+        1. Import classNameContext file
+        2. Declare a constant variable 
+            const a = useContext(classNameContext);
+        3. To print it write it inside curly brackets
+            {a.variableName}
+
+
+
+
+
+            
