@@ -2,7 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
-export default function CELogin() {
+export default function CELogin(props) {
 
     const navigate = useNavigate();
     const[username, setUsername] = useState();
@@ -31,9 +31,11 @@ export default function CELogin() {
         console.log(response.data.status);
         localStorage.setItem("username", username);
         localStorage.setItem("password", password);
+        sessionStorage.setItem("accessToken", "true");
         localStorage.setItem("id", response.data.id);
         if(response.data.status === true){
             navigate("/CounterExecutive");
+            props.history.replace("/CounterExecutive")
         }
         else{
             alert("Enter Valid Credentials...:(")
