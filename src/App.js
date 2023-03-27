@@ -1,5 +1,5 @@
 
-import './App.css';
+// import './App.css';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AddServices from './component/AddServices';
 import AssignCounter from './component/AssignCounter';
@@ -27,7 +27,7 @@ function App() {
   return (
     <div style={{ paddingBottom: "10px" }}>
       <ExecutiveState>
-        <RouterProvider router={router} />        
+          <RouterProvider router={router} />        
       </ExecutiveState>
     </div>
   );

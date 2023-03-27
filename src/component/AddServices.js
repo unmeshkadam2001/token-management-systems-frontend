@@ -48,58 +48,110 @@ function AddServices() {
     await axios.post("http://localhost:8080/addService", data).then(response => {
       setMessage("Servies added successfully!");
     })
-    .catch(error => {
-      console.log(error);
-      setMessage("Inserting services failed!");
-    });
+      .catch(error => {
+        console.log(error);
+        setMessage("Inserting services failed!");
+      });
   };
 
   return (
     <div>
-        <h1  style={{ backgroundColor:"white" , padding:"10px" }}>Add Services</h1>
+      <ul className="background overflow-auto">
+        <h1 style={{ backgroundColor: "white", padding: "10px" }}>Add Services</h1>
         <form onSubmit={handleSubmit}>
-        <label>
+          <label>
             Type of Service:
             <input
-            type="text"
-            value={typeOfService}
-            onChange={(e) => setTypeOfService(e.target.value)}
+              type="text"
+              value={typeOfService}
+              onChange={(e) => setTypeOfService(e.target.value)}
             />
-        </label>
-        {services.map((service, index) => (
+          </label>
+          {services.map((service, index) => (
             <div key={index}>
-            <label>
+              <label>
                 Service {index + 1}:
                 <input
-                type="text"
-                value={service.serviceName}
-                onChange={(e) => handleServiceChange(index, e)}
+                  type="text"
+                  value={service.serviceName}
+                  onChange={(e) => handleServiceChange(index, e)}
                 />
-            </label>
-            {validationErrors.length > 0 && !service.serviceName && (
+              </label>
+              {validationErrors.length > 0 && !service.serviceName && (
                 <p style={{ color: "red" }}>Service name is required</p>
-            )}
-            <label>
+              )}
+              <label>
                 Status:
                 <select value={service.statusOfService} onChange={(e) => handleStatusChange(index, e)}>
-                <option value="activate">Active</option>
-                <option value="inactive">Inactive</option>
+                  <option value="activate">Active</option>
+                  <option value="inactive">Inactive</option>
                 </select>
-            </label>
-            <button style={{ margin:"10px" }} type="button" onClick={() => handleRemoveService(index)}>
+              </label>
+              <button style={{ margin: "10px" }} type="button" onClick={() => handleRemoveService(index)}>
                 Remove Service
-            </button>
-            <button type="button" onClick={handleAddService}>
-            Add Service
-            </button>
-            
+              </button>
+              <button type="button" onClick={handleAddService}>
+                Add Service
+              </button>
+
             </div>
-        ))}
-        
-        <button type="submit">Submit</button>
+          ))}
+
+          <button type="submit">Submit</button>
         </form>
         <br></br>
-        {message && <p style={{backgroundColor:"white" , padding:"10px" , color:"green" , textAlign:"center" }}>{message}</p>}
+        {message && <p style={{ backgroundColor: "white", padding: "10px", color: "green", textAlign: "center" }}>{message}</p>}
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
     </div>
   );
 }

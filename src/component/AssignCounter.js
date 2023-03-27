@@ -13,7 +13,7 @@ function AssignCounter() {
       .then(response => {
         console.log(response.data);
         setServiceTypes(response.data);
-        
+
       })
       .catch(error => {
         console.log(error);
@@ -45,32 +45,85 @@ function AssignCounter() {
   };
 
   return (
-    <div style={{ padding:"20px" }}>
-      <h1 style={{ backgroundColor:"white" , padding:"10px" }}>Assign counter</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label>Counter Executive Name:</label>
-          <input type="text" className="form-control" value={counterExecutiveName} onChange={(event) => setCounterExecutiveName(event.target.value)} required />
-        </div>
-        <div className="form-group">
-          <label>Password:</label>
-          <input style={{ border:"2px solid black" }} type="password" className="form-control" value={password} onChange={(event) => setPassword(event.target.value)} required />
-        </div>
-        <div className="form-group">
-          <label>Select a service type:</label>
-          <select style={{ border:"2px solid black" }} className="form-control" value={serviceTypeId} onChange={(event) => setServiceTypeId(event.target.value)} required>
-            <option value="">Select a service type</option>
-            {serviceTypes.map(serviceType => (
-              <option key={serviceType.id} value={serviceType.id}>
-                {serviceType.typeOfService}
-              </option>
-            ))}
-          </select>
-        </div>
-        <button type="submit" className="btn btn-primary">Assign Counter</button>
-      </form><br></br>
-      {message && <p style={{backgroundColor:"white" , padding:"10px" , color:"green" , textAlign:"center" }}>{message}</p>}
-      
+
+    <div style={{ padding: "20px" }}>
+      <ul class="background">
+        <h1 style={{ backgroundColor: "white", padding: "10px" }}>Assign counter</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Counter Executive Name:</label>
+            <input type="text" className="form-control" value={counterExecutiveName} onChange={(event) => setCounterExecutiveName(event.target.value)} required />
+          </div>
+          <div className="form-group">
+            <label>Password:</label>
+            <input style={{ border: "2px solid black" }} type="password" className="form-control" value={password} onChange={(event) => setPassword(event.target.value)} required />
+          </div>
+          <div className="form-group">
+            <label>Select a service type:</label>
+            <select style={{ border: "2px solid black" }} className="form-control" value={serviceTypeId} onChange={(event) => setServiceTypeId(event.target.value)} required>
+              <option value="">Select a service type</option>
+              {serviceTypes.map(serviceType => (
+                <option key={serviceType.id} value={serviceType.id}>
+                  {serviceType.typeOfService}
+                </option>
+              ))}
+            </select>
+          </div>
+          <button type="submit" className="btn btn-primary">Assign Counter</button>
+        </form><br></br>
+        {message && <p style={{ backgroundColor: "white", padding: "10px", color: "green", textAlign: "center" }}>{message}</p>}
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+
     </div>
   );
 }

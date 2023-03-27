@@ -49,9 +49,9 @@ function TokenGeneration() {
       }
     };
     axios.post("http://localhost:8080/generateToken", data)
-      .then((response) => {
-        console.log(response.data);
-        setMessage(response.data);
+    .then((response) => {
+      console.log(response.data);
+      setMessage(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -61,41 +61,93 @@ function TokenGeneration() {
 
   return (
     <div>
-      <h1>Token Generation</h1>
-      <div style={{ backgroundColor:"white" , alignItems:"center" , marginLeft:"20%" , marginRight:"20%" , borderRadius:"10px"}}>
-        <br></br>
-        <div style={{ marginLeft:"20%" , marginRight:"20%" , borderRadius:"10px"}}>
-            <label htmlFor="typeOfService">Type of Service:</label>
-            <select id="typeOfService" name="typeOfService" value={selectedType} onChange={handleTypeChange}>
-            <option value="">Select a type of service</option>
-            {servicesData.map((service) => (
-                <option key={service.id} value={service.typeOfService}>
-                {service.typeOfService}
-                </option>
-            ))}
-            </select>
-        </div>
-        {selectedServices.length > 0 && (
-            <div style={{ marginLeft:"20%" , marginRight:"20%" , borderRadius:"20px"}}>
-            <label htmlFor="services">Services:</label>
-            <select id="services" name="services" value={selectedServiceId} onChange={handleServiceChange}>
-                <option value="">Select a service</option>
-                {selectedServices.map((service) => (
-                <option key={service.id} value={service.id}>
-                    {service.serviceName}
-                </option>
-                ))}
-            </select>
-            </div>
-        )}
-        <br></br>
-        {selectedServiceId && (
-            <div>
-            <button style={{ marginBottom:"20px" , marginLeft:"35%" }} onClick={generateToken} className="btn btn-primary">Generate Token</button>
-            </div>
-        )}
-      </div><br></br><br></br>
-      {message && <p style={{backgroundColor:"white" , padding:"10px" , color:"green" , textAlign:"center" }}>{message}</p>}
+    <ul class="background">
+    <h1>Token Generation</h1>
+    <div style={{ backgroundColor:"white" , alignItems:"center" , marginLeft:"20%" , marginRight:"20%" , borderRadius:"10px"}}>
+      <br></br>
+      <div style={{ marginLeft:"20%" , marginRight:"20%" , borderRadius:"10px"}}>
+          <label htmlFor="typeOfService">Type of Service:</label>
+          <select id="typeOfService" name="typeOfService" value={selectedType} onChange={handleTypeChange}>
+          <option value="">Select a type of service</option>
+          {servicesData.map((service) => (
+              <option key={service.id} value={service.typeOfService}>
+              {service.typeOfService}
+              </option>
+          ))}
+          </select>
+      </div>
+      {selectedServices.length > 0 && (
+          <div style={{ marginLeft:"20%" , marginRight:"20%" , borderRadius:"20px"}}>
+          <label htmlFor="services">Services:</label>
+          <select id="services" name="services" value={selectedServiceId} onChange={handleServiceChange}>
+              <option value="">Select a service</option>
+              {selectedServices.map((service) => (
+              <option key={service.id} value={service.id}>
+                  {service.serviceName}
+              </option>
+              ))}
+          </select>
+          </div>
+      )}
+      <br></br>
+      {selectedServiceId && (
+          <div>
+          <button style={{ marginBottom:"20px" , marginLeft:"35%" }} onClick={generateToken} className="btn btn-primary">Generate Token</button>
+          </div>
+      )}
+    </div><br></br><br></br>
+    {message && <p style={{backgroundColor:"white" , padding:"10px" , color:"green" , textAlign:"center" }}>{message}</p>}
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+   <li></li>
+</ul>
     </div>
   );
 }
