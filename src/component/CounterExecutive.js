@@ -80,7 +80,6 @@ export default function CounterExecutive() {
             .then((response) => {
                 console.log(response.data);
                 setResolvedResponse(response.data);
-
             });
     }
 
